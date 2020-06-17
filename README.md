@@ -1,4 +1,4 @@
-# lyw.sh
+# LYWSD02/LYWSD03MMC to MQTT
 
 ## What is it?
 
@@ -30,8 +30,9 @@ sudo apt-get install bluez-tools mosquitto-clients
 
 ## Installation
 ```
-wget https://github.com/alive-corpse/lyw.zip
-unzip ...
+wget https://github.com/alive-corpse/LYWSD02-LYWSD03MMC-MQTT/archive/master.zip
+unzip master.zip
+cd LYWSD02-LYWSD03MMC-MQTT-master/
 ```
 Then edit mqtt.conf file to fill it up with your MQTT credentials. Do not use spaces between equal sign and values/parameters names.
 
