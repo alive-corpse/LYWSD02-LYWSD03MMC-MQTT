@@ -54,7 +54,7 @@ Where AA:AA:AA:AA:AA:AA and BB:BB:BB:BB:BB:BB are mac addresses of your LYSD02 a
 
 ### Output
 ```
-# ./LYW.sh AA:AA:AA:AA:AA:AA BB:BB:BB:BB:BB:BB
+# ./lyw.sh AA:AA:AA:AA:AA:AA BB:BB:BB:BB:BB:BB
 ============ 2020-06-18 02:53:50 =============
 DEVICE FOUND: LYWSD03MMC (AA:AA:AA:AA:AA:AA)
 Battery: 99
