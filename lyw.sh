@@ -29,9 +29,11 @@ for mac in $*; do
                     while IFS= read -r line; do
                         res=`echo "$line" | awk '{
                             if ($0~/Notification handle = '"$chkhnd"' value/) {print "ibase=16; "toupper($7$6)"\nibase=16; "toupper($8)}
-                        }' | bc`
+                        }'`
                         if [ -n "$res" ]; then
-                            temphum=`echo $res | awk '{print "echo Temp: "$1/100"\necho Hum: "$2"\n'"$mqttc"'/temp -m "$1/100"\n'"$mqttc"'/hum -m "$2}'`
+                            temp=`echo "$res" | sed '1!d' | bc`
+                            hum=`echo "$res" | sed '2!d' | bc`
+                            temphum=`echo "$temp $hum" | awk '{print "echo Temp: "$1/100"\necho Hum: "$2"\n'"$mqttc"'/temp -m "$1/100"\n'"$mqttc"'/hum -m "$2}'`
                             echo "$temphum" | sh
                             exit 0
                         fi
