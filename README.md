@@ -12,10 +12,10 @@ It's simple script for getting values of temperature, humidity and battary level
 
 ## How it works?
 
-After you run script and pass list of mac addresses to it, script will make this actions for each of address from list:
+After you run script and pass list of mac addresses to it, script will make this actions for each of addresses from list:
 1. Try to detect if device is exists and available
-2. Trying to get UUID of handle that leads to temperature humidity data
-3. Compare this handle shifting with hardcoded in contants
+2. Trying to get UUID of handle that leads to temperature and humidity data
+3. Compare this handle shifting with hardcoded from constants
 4. If handle shifts are equal with one of them scripts print what device is it (LYWSD03MMC or LYWSD02)
 5. For each version of devices it has number of handles to operate with, so it tried to get battery level data with one of handles, decode it, print it and send it to mqtt topic
 6. With another handle it makes request to subscribe for notifications
@@ -42,7 +42,7 @@ Run this
 ```
 sudo hcitool lescan
 ```
-to catch mac addresses of devices with names starts with _LYWSD02_. You can't just grep output cause *hchitool lecan* does not flash stdout buffer during work. Lines can be duplicated, collect and save uniq mac addresses of devices for using with script.
+to catch mac addresses of devices with names starts with _LYWSD_. You can't just grep output cause *hchitool lecan* does not flash stdout buffer during work. Lines can be duplicated, collect and save uniq mac addresses of devices for using with script.
 
 ## Running
 
