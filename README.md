@@ -25,7 +25,7 @@ After you run script and pass list of mac addresses to it, script will make this
 
 Obliviously, you shoud have bluetooth adapter supported by you operating system. Also you need to install this packets (example for debian-based operating systems):
 ```
-sudo apt-get install bluez-tools mosquitto-clients
+sudo apt-get install bluez-tools mosquitto-clients libglib2.0-dev pi-bluetooth
 ```
 
 ## Installation
